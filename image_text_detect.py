@@ -12,7 +12,7 @@ import easyocr
 current_time = current_time = time.strftime("%Y-%m-%d_%H-%M-%S")
 
 keyboard.send('PrtScn')
-time.sleep(6) #U koliko ne bi stavili sleep algoritam bi nastavio da se izvrsava
+time.sleep(6) #Ukoliko ne bi stavili sleep algoritam bi nastavio da se izvrsava
 
 clipboard_image = PIL.ImageGrab.grabclipboard()
 clipboard_image.save(f'message_{current_time}.png')
