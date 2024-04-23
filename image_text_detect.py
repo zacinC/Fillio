@@ -5,16 +5,26 @@ import PIL
 import keyboard
 import time
 import os
+import pyperclip
 import cv2
 import easyocr
 
 
 current_time = current_time = time.strftime("%Y-%m-%d_%H-%M-%S")
 
+clipboard_original_content = PIL.ImageGrab.grabclipboard()
 keyboard.send('PrtScn')
-time.sleep(6) #Ukoliko ne bi stavili sleep algoritam bi nastavio da se izvrsava
+
+
+while True:
+    clipboard_current_content = PIL.ImageGrab.grabclipboard()
+    if clipboard_original_content != clipboard_current_content:
+      #  print("Slika je kopirana u clipboard.")
+        break
+    time.sleep(1)
 
 clipboard_image = PIL.ImageGrab.grabclipboard()
+#print(clipboard_image)
 clipboard_image.save(f'message_{current_time}.png')
 
 time.sleep(1)
