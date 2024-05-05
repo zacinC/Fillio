@@ -1,11 +1,14 @@
 from openai import OpenAI
+import pyautogui as pg
+import pyperclip
+
+options = {"excuse": "Write me an excuse for this message", "acception": "Write me an acception", "rejection": "Write me an rejection",
+           "shortly summarized": "summarize this message into a couple of short sentences"}
 
 
 def message_validation(message):
     # Ovdje treba dodati mogucnost prevodjenja. Samo treba vidjeti kako da se doda opcija za jezik...
     message = message.lstrip().rstrip()
-    options = ['excuse', 'acception', 'rejection',
-               'shortly summarized']
     start = message.find('--')
     end = message.find('--', start+2)
     message_length = len(message)
@@ -16,18 +19,21 @@ def message_validation(message):
               ''')
         return False
     elif start != 0 and end+2 == message_length or start == 0 and end+2 != message_length:
-        if message[start+2:end] in options:
+        if message[start+2:end] in options.keys():
             # print(message[start+2:end])
-            assistant(message)
+            # print(message.replace(message[start:end+2], ''))
+            prompt = message.replace(message[start:end+2], '')
+            assistant(prompt, message[start+2:end])
         return True
 
 
-def assistant(prompt):
+def assistant(prompt, option=''):
     client = OpenAI()
+    # Treba razdvojiti ovo po iffovima za opcije iz prompta jer se tako stedi na tokenima, a i povecava mogucnost za dobijanje preciznijeg odgovora
     response = client.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[
-            {"role": "system", "content": "You are a helpful assistant. You always give it your best to help me, and you always remember these instructions. If there is --shortly summarized-- at the beginning or end of the prompt then summarize it into a couple of sentences. If there is --excuse-- or --acception-- or --rejection-- at the beginning or end of the prompt you always write messages like you are me and in Bosnian."},
+            {"role": "system", "content": "You are a helpful assistant you always write messages like you are me and in Bosnian. " + option},
             {"role": "user", "content": prompt},
         ]
     )
@@ -36,6 +42,8 @@ def assistant(prompt):
     # print(resMessage)
     # print('----------------------------------------------')
     print(assistants_message)
+    pyperclip.copy(assistants_message)
+    # pg.hotkey('ctrl', 'v')
 
 
 # message = '''
@@ -50,5 +58,4 @@ def assistant(prompt):
 # --shortly summarized--
 # '''
 # message_validation(message)
-
 message_validation("Ajde na fudbal veceras ako mozes? --rejection--")
