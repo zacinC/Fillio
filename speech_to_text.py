@@ -2,7 +2,6 @@ import speech_recognition as sr
 from pydub import AudioSegment, utils
 import time
 import os
-import os
 import openai
 
 def convert_to_wav(input_file, output_file):
@@ -19,7 +18,7 @@ def recognize_speech(audio_file, language='sr_SR'):
 def get_prober_name():
     return r'D:\Python kurs\Project\ffprobe.exe'
 
-def get_response(prompt):
+def get_chatgpt_response(prompt):
     
     openai.api_key = os.getenv("OPENAI_API_KEY")
 
@@ -54,4 +53,4 @@ os.remove(output_file)
 print(result)
 prompt = result
 
-get_response(prompt)
+get_chatgpt_response(prompt)
