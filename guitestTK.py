@@ -1,6 +1,23 @@
 import tkinter as tk
 import tkinter.messagebox
 import pyperclip
+from aiResponse import message_validation
+from image_text_detect import screenshot_to_text
+import pyautogui as pg
+
+
+def withdraw_app(self):
+    self.master.withdraw()
+    for window in root.winfo_children():
+        if isinstance(window, tk.Toplevel):
+            window.withdraw()
+
+
+def deiconify_app(self):
+    self.master.deiconify()
+    for window in root.winfo_children():
+        if isinstance(window, tk.Toplevel):
+            window.deiconify()
 
 
 class FloatingButton:
@@ -12,6 +29,7 @@ class FloatingButton:
         self.formBoarder = tk.StringVar(value="0")
         # Variable to control the spawning of input and output form window
         self.spawn_forms = tk.StringVar(value="1")
+        self.prompt_advisory = tk.StringVar(value="0")
         master.title("Floating Button")
 
         # Set window attributes for floating effect
@@ -60,19 +78,19 @@ class FloatingButton:
                 if i == 1:
                     self.img1 = tk.PhotoImage(file=image_path)
                     new_button = tk.Button(
-                        new_window, image=self.img1, command=self.onButtonClick)
+                        new_window, image=self.img1, command=self.excuse)
                 if i == 2:
                     self.img2 = tk.PhotoImage(file=image_path)
                     new_button = tk.Button(
-                        new_window, image=self.img2, command=self.onButtonClick)
+                        new_window, image=self.img2, command=self.accept)
                 if i == 3:
                     self.img3 = tk.PhotoImage(file=image_path)
                     new_button = tk.Button(
-                        new_window, image=self.img3, command=self.onButtonClick)
+                        new_window, image=self.img3, command=self.shortly_summarized)
                 if i == 4:
                     self.img4 = tk.PhotoImage(file=image_path)
                     new_button = tk.Button(
-                        new_window, image=self.img4, command=self.onButtonClick)
+                        new_window, image=self.img4, command=self.reject)
                 if i == 5:
                     settings_button_path = r"C:\Users\Vedo\Desktop\Coinis kurs\Fillio\assets\icons\settings.png"
                     self.imgSettingsButton = tk.PhotoImage(
@@ -97,7 +115,7 @@ class FloatingButton:
                 # Use StringVar to check the value
                 new_window.overrideredirect(self.formBoarder.get() == "1")
                 new_window.geometry(
-                    "350x200+{}+{}".format(self.x - 250, self.y - 300))
+                    "530x330+{}+{}".format(self.x - 450, self.y - 450))
 
                 # Background color
                 new_window.configure(bg="#242424")
@@ -106,22 +124,120 @@ class FloatingButton:
                 self.text_input = tk.Entry(new_window)
                 self.text_input.pack(pady=5, fill=tk.X)
 
-                # Button to submit input
-                submit_button = tk.Button(
-                    new_window, text="Submit", command=self.submitInput)
-                submit_button.pack(pady=5)
+                input_button_frame = tk.Frame(new_window)
+                input_button_frame.pack()
 
-                # Text output field
+                # Create a button to clear input
+                clear_input_button = tk.Button(
+                    input_button_frame, text="Clear Input", command=self.clearInput)
+                clear_input_button.pack(side="left")
+
+                # Create a button to submit input
+                submit_button = tk.Button(
+                    input_button_frame, text="Submit", command=self.submitInput)
+                submit_button.pack(side="left")
+
+                # Create the text output field
                 self.text_output = tk.Text(new_window, height=3, width=20)
                 self.text_output.pack(fill=tk.BOTH, expand=True)
 
-                # Button to copy output
-                copy_button = tk.Button(
-                    new_window, text="Copy Output", command=self.copyOutput)
-                copy_button.pack(pady=5)
+                # Create a frame for output text and buttons
+                output_frame = tk.Frame(new_window)
+                output_frame.pack()
+
+                # Create a button to clear output
+                clear_output_button = tk.Button(
+                    output_frame, text="Clear Output", command=self.clearOutput)
+                clear_output_button.pack(side="left")
+
+                # Create a button to copy output
+                copy_output_button = tk.Button(
+                    output_frame, text="Copy Output", command=self.copyOutput)
+                copy_output_button.pack(side="left")
 
                 # Add the new window to the list of floating buttons
                 self.floating_buttons.append(new_window)
+
+    def clearInput(self):
+        # Clear the input field
+        self.text_input.delete(0, tk.END)
+
+    def clearOutput(self):
+        # Clear the output field
+        self.text_output.delete(1.0, tk.END)
+
+    def excuse(self):
+        withdraw_app(self)
+        try:
+            message = screenshot_to_text()
+        except Exception as e:
+            self.text_output.insert(tk.END,
+                                    f"\nScreenshot failed by exception: {e}\n ")
+
+        if self.prompt_advisory.get() == "1":
+            try:
+                self.text_input.insert(tk.END, message + ' --excuse--')
+            except:
+                self.text_output.insert(
+                    tk.END, "\nScreenshot failed or canceled or blank\n")
+        else:
+            self.submitToAi(message, ' --excuse--')
+        deiconify_app(self)
+
+    def accept(self):
+        withdraw_app(self)
+        try:
+            message = screenshot_to_text()
+        except Exception as e:
+            self.text_output.insert(tk.END,
+                                    f"\nScreenshot failed by exception: {e}\n ")
+
+        if self.prompt_advisory.get() == "1":
+            try:
+                self.text_input.insert(tk.END, message + ' --acception--')
+            except:
+                self.text_output.insert(
+                    tk.END, "\nScreenshot failed or canceled or blank\n")
+        else:
+            self.submitToAi(message, ' --acception--')
+        deiconify_app(self)
+
+    def shortly_summarized(self):
+        withdraw_app(self)
+        try:
+            message = screenshot_to_text()
+        except Exception as e:
+            self.text_output.insert(tk.END,
+                                    f"\nScreenshot failed by exception: {e}\n ")
+
+        if self.prompt_advisory.get() == "1":
+            try:
+                self.text_input.insert(
+                    tk.END, message + ' --shortly summarized--')
+            except:
+                self.text_output.insert(
+                    tk.END, "\nScreenshot failed or canceled or blank\n")
+        else:
+            self.submitToAi(message, ' --shortly summarized--')
+        deiconify_app(self)
+
+    def reject(self):
+        withdraw_app(self)
+        try:
+            message = screenshot_to_text()
+        except Exception as e:
+            self.text_output.insert(tk.END,
+                                    f"\nScreenshot failed by exception: {e}\n ")
+
+        if self.prompt_advisory.get() == "1":
+            try:
+                self.text_input.insert(tk.END, message + ' --rejection--')
+            except:
+                self.text_output.insert(
+                    tk.END, "\nScreenshot failed or canceled or blank\n")
+        else:
+            self.submitToAi(message, ' --rejection--')
+        deiconify_app(self)
 
     def settings(self):
         if self.settings_window and tk.Toplevel.winfo_exists(self.settings_window):
@@ -135,21 +251,32 @@ class FloatingButton:
             self.settings_window.attributes('-topmost', True)
             self.settings_window.overrideredirect(True)
             self.settings_window.geometry(
-                "150x70+{}+{}".format(self.x - 400, self.y - 150))
+                "150x100+{}+{}".format(self.x - 400, self.y - 150))
             self.settings_window.configure(bg="#242424")
 
             # Check button to toggle formBorder
             check_button = tk.Checkbutton(self.settings_window, text="Form Border", variable=self.formBoarder,
                                           onvalue="1", offvalue="0", command=self.toggleFormBorder)
+            check_button.configure(bg="yellow")
             check_button.pack()
 
             # Check button to toggle spawn_forms
             spawn_button = tk.Checkbutton(self.settings_window, text="Spawn Forms", variable=self.spawn_forms,
                                           onvalue="1", offvalue="0", command=self.toggleFormBorder)
+            spawn_button.configure(bg="yellow")
             spawn_button.pack()
+
+            # Check button to turn on prompt advisory
+            if self.spawn_forms.get() == "1":
+                prompt_advisory_button = tk.Checkbutton(
+                    self.settings_window, text="Prompt Advisory", variable=self.prompt_advisory, onvalue="1", offvalue="0", command=self.toggleFormBorder)
+                prompt_advisory_button.configure(bg="yellow")
+                prompt_advisory_button.pack()
 
     def toggleFormBorder(self):
         self.settings_window.destroy()
+        if self.spawn_forms.get() == "0":
+            self.prompt_advisory.set("0")
         # Force update of the application to reflect the changes
         # self.master.update_idletasks()
 
@@ -161,7 +288,21 @@ class FloatingButton:
         self.text_input.delete(0, tk.END)
 
         # Put the input text in the output field
-        self.text_output.insert(tk.END, f"{input_text}\n")
+        self.submitToAi(input_text)
+
+    def submitToAi(self, prompt, option=''):
+        if prompt == -1 or prompt == '':
+            self.text_output.insert(
+                tk.END, "\nScreenshot failed or canceled or blank\n")
+            return
+
+        response = message_validation(prompt + option)
+
+        self.text_output.insert(
+            tk.END, f"\n{response}\n")
+        pyperclip.copy(response)
+        pg.hotkey('ctrl', 'v')
+        pg.hotkey('ctrl', 'a')
 
     def copyOutput(self):
         # Get text from the output field
@@ -169,10 +310,6 @@ class FloatingButton:
 
         # Copy text to clipboard
         pyperclip.copy(output_text.strip())
-
-        # Show confirmation message
-        tkinter.messagebox.showinfo(
-            "Copy Output", "Output copied to clipboard!")
 
     def start_move(self, event):
         self.move = True
