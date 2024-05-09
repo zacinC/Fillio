@@ -68,5 +68,3 @@ def screenshot_to_text():
     os.remove(f'message_{current_time}.png')
     text = text.strip()
     return text
-
-print(screenshot_to_text())
