@@ -19,7 +19,7 @@ Welcome to the Personal Assistant Bot, your intelligent companion designed to st
 **Development Tools:** 
 - Visual Studio Code
 - Git <br><br>
-**Libraries:** <br>
+**Libraries:**
 - **OpenAI:** Facilitates interaction with the OpenAI API for AI-powered response generation.<br>
 - **PyAutoGUI:** Automates computer activities, including mouse and keyboard control, for seamless interaction with communication platforms.<br>
 - **Pyperclip:** Provides functionalities for manipulating elements within the clipboard (temporary memory), enabling efficient text transfer.<br>
