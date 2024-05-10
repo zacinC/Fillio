@@ -3,12 +3,12 @@ import pyautogui as pg
 import pyperclip
 
 options = {"excuse": "Write me an excuse for this message", "acception": "Write me an acception for this offer (write it like you're me) so I can send it to them.", "rejection": "Write me a rejection",
-           "shortly summarized": "%", 'explain': "Explain this in detail and easy to understand"}
+           "summarize": "%", 'explain': "Explain this in detail and easy to understand"}
 
 
 def message_validation(message):
     # Ovdje treba dodati mogucnost prevodjenja. Samo treba vidjeti kako da se doda opcija za jezik...
-    message = message.lstrip().rstrip()
+    message = message.lstrip().rstrip().lower()
     start = message.find('--')
     end = message.find('--', start+2)
     message_length = len(message)
@@ -28,7 +28,7 @@ def message_validation(message):
 
 def assistant(prompt, option=''):
     client = OpenAI()
-    if option == 'shortly summarized':
+    if option == 'summarize':
         response = client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=[
