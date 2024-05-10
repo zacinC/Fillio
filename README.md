@@ -16,7 +16,7 @@ Welcome to the Personal Assistant Bot, your intelligent companion designed to st
 ### Technical Specifications
 
 **Programming Language:** Python 3<br><br>
-**Development Tools:** <br>
+**Development Tools:** 
 - Visual Studio Code
 - Git <br><br>
 **Libraries:** <br>
