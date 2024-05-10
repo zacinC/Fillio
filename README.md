@@ -20,11 +20,11 @@ Welcome to the Personal Assistant Bot, your intelligent companion designed to st
 - Visual Studio Code
 - Git <br><br>
 **Libraries:** <br>
--**OpenAI:** Facilitates interaction with the OpenAI API for AI-powered response generation.<br>
--**PyAutoGUI:** Automates computer activities, including mouse and keyboard control, for seamless interaction with communication platforms.<br>
--**Pyperclip:** Provides functionalities for manipulating elements within the clipboard (temporary memory), enabling efficient text transfer.<br>
--**Tkinter (Optional):** Offers the ability to create a user-friendly graphical user interface (GUI) for user interaction (alternative interfaces may be considered).<br>
--**Image Processing Libraries (Optional):** Depending on platform integration, libraries like PIL (Python Imaging Library) or OpenCV might be used for image manipulation and potential OCR (Optical Character Recognition) tasks.
+- **OpenAI:** Facilitates interaction with the OpenAI API for AI-powered response generation.<br>
+- **PyAutoGUI:** Automates computer activities, including mouse and keyboard control, for seamless interaction with communication platforms.<br>
+- **Pyperclip:** Provides functionalities for manipulating elements within the clipboard (temporary memory), enabling efficient text transfer.<br>
+- **Tkinter (Optional):** Offers the ability to create a user-friendly graphical user interface (GUI) for user interaction (alternative interfaces may be considered).<br>
+- **Image Processing Libraries (Optional):** Depending on platform integration, libraries like PIL (Python Imaging Library) or OpenCV might be used for image manipulation and potential OCR (Optical Character Recognition) tasks.
 
 
 ### Getting Started (Basic Usage Flow)
@@ -36,8 +36,3 @@ Welcome to the Personal Assistant Bot, your intelligent companion designed to st
 5. **Message Targeting:** Depending on the platform, you might need to select the specific message you want the bot to address. (Functionality may vary based on platform integration.)<br>
 6. **Generated Response:** The bot will analyze the message and generate a tailored response based on your selection.<br>
 7. **Review and Send:** Review the generated response to ensure it aligns with your needs. If satisfied, send the response through the communication platform.
-
-### Additional Notes
-
-This is a high-level overview, and specific implementation details might vary depending on the chosen communication platforms and desired functionalities.
-Feel free to contribute to the project's development! Refer to the project's contribution guidelines for details on submitting pull requests, reporting issues, and joining the developer community.
