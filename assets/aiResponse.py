@@ -2,8 +2,8 @@ from openai import OpenAI
 import pyautogui as pg
 import pyperclip
 
-options = {"excuse": "Write me an excuse for this message", "acception": "Write me an acception", "rejection": "Write me a rejection",
-           "shortly summarized": "Don't respond to this, Summarize it in 3 words", 'explain': "Explain this in detail and easy to understand"}
+options = {"excuse": "Write me an excuse for this message", "acception": "Write me an acception for this offer (write it like you're me) so I can send it to them.", "rejection": "Write me a rejection",
+           "shortly summarized": "%", 'explain': "Explain this in detail and easy to understand"}
 
 
 def message_validation(message):

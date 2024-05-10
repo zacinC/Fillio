@@ -25,7 +25,7 @@ class FloatingButton:
         self.floating_buttons = []  # List to store references to the floating buttons
         # Use StringVar to store the state
         self.settings_window = None
-        self.formBoarder = tk.StringVar(value="0")
+        self.formBoarder = tk.StringVar(value="1")
         # Variable to control the spawning of input and output form window
         self.spawn_forms = tk.StringVar(value="1")
         self.prompt_advisory = tk.StringVar(value="0")
@@ -112,7 +112,7 @@ class FloatingButton:
                 new_window.title("Floating Text")
                 new_window.attributes('-topmost', True)
                 # Use StringVar to check the value
-                new_window.overrideredirect(self.formBoarder.get() == "1")
+                new_window.overrideredirect(self.formBoarder.get() == "0")
                 new_window.geometry(
                     "530x330+{}+{}".format(self.x - 450, self.y - 450))
 
