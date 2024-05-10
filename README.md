@@ -29,12 +29,12 @@ Git
 
 ### Getting Started (Basic Usage Flow)
 
-1. **Launch the Application:** Start the Personal Assistant Bot application.\
-2. **Floating Button:** A small floating button will appear on your screen, ready to assist.\
-3. **Selecting Messages:** When you receive a message requiring a response, click the floating button.\
-4. **Response Options:** A menu will appear, offering various response styles (e.g., accept, reject, summarize). Choose the most suitable option.\
-5. **Message Targeting:** Depending on the platform, you might need to select the specific message you want the bot to address. (Functionality may vary based on platform integration.)\
-6. **Generated Response:** The bot will analyze the message and generate a tailored response based on your selection.\
+1. **Launch the Application:** Start the Personal Assistant Bot application.<br>
+2. **Floating Button:** A small floating button will appear on your screen, ready to assist.<br>
+3. **Selecting Messages:** When you receive a message requiring a response, click the floating button.<br>
+4. **Response Options:** A menu will appear, offering various response styles (e.g., accept, reject, summarize). Choose the most suitable option.<br>
+5. **Message Targeting:** Depending on the platform, you might need to select the specific message you want the bot to address. (Functionality may vary based on platform integration.)<br>
+6. **Generated Response:** The bot will analyze the message and generate a tailored response based on your selection.<br>
 7. **Review and Send:** Review the generated response to ensure it aligns with your needs. If satisfied, send the response through the communication platform.
 
 ### Additional Notes
