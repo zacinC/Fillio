@@ -7,10 +7,10 @@ Welcome to the Personal Assistant Bot, your intelligent companion designed to st
 
 ### Key Features:
 
-**AI-Powered Response Generation:** Leverage the power of artificial intelligence to create tailored responses for your incoming messages, freeing you from repetitive manual typing.\
-**Enhanced Productivity:** Save valuable time by automating responses, allowing you to focus on more critical tasks.\
-**Message Summarization:** Quickly grasp the essence of lengthy messages with automatically generated summaries, ensuring you stay on top of your communication flow.\
-**Customization Options:** Choose from a range of response styles, including acceptances, rejections, excuses, or concise summaries, to perfectly suit your communication needs.\
+**AI-Powered Response Generation:** Leverage the power of artificial intelligence to create tailored responses for your incoming messages, freeing you from repetitive manual typing.\<br>
+**Enhanced Productivity:** Save valuable time by automating responses, allowing you to focus on more critical tasks.\<br>
+**Message Summarization:** Quickly grasp the essence of lengthy messages with automatically generated summaries, ensuring you stay on top of your communication flow.\<br>
+**Customization Options:** Choose from a range of response styles, including acceptances, rejections, excuses, or concise summaries, to perfectly suit your communication needs.\<br>
 **Platform Agnostic:** Enjoy the flexibility of using the bot across a wide array of communication platforms, maximizing its utility in your daily interactions.
 
 ### Technical Specifications
