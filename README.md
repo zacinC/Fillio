@@ -37,3 +37,5 @@ Welcome to the Personal Assistant Bot, your intelligent companion designed to st
 5. **Message Targeting:** Depending on the platform, you might need to select the specific message you want the bot to address. (Functionality may vary based on platform integration.)<br>
 6. **Generated Response:** The bot will analyze the message and generate a tailored response based on your selection.<br>
 7. **Review and Send:** Review the generated response to ensure it aligns with your needs. If satisfied, send the response through the communication platform.
+
+![DugmeAi result](https://github.com/zacinC/Fillio/assets/108444768/f6e1783d-f98e-4d5f-8a7a-2cfdd5ca55ed)
