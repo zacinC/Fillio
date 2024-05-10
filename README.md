@@ -13,6 +13,8 @@ Welcome to the Personal Assistant Bot, your intelligent companion designed to st
 - **Customization Options:** Choose from a range of response styles, including acceptances, rejections, excuses, or concise summaries, to perfectly suit your communication needs.<br>
 - **Platform Agnostic:** Enjoy the flexibility of using the bot across a wide array of communication platforms, maximizing its utility in your daily interactions.
 
+![DugmeAi](https://github.com/zacinC/Fillio/assets/108444768/6f5d0527-3a0e-4688-8278-be2d3f8db3b1)
+
 ### Technical Specifications
 
 **Programming Language:** Python 3<br><br>
