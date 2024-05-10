@@ -44,7 +44,7 @@ class FloatingButton:
 
         # Create the button
         self.image = tk.PhotoImage(
-            file=r"C:\Users\Vedo\Desktop\Coinis kurs\Fillio\assets\icons\main_button.png")
+            file=r"Fillio\assets\icons\main_button.png")
         self.button = tk.Button(master, image=self.image,
                                 command=self.onButtonClick)
         self.button.pack()
@@ -72,7 +72,7 @@ class FloatingButton:
                 new_window.overrideredirect(True)
                 new_window.geometry(
                     '50x50+{}+{}'.format(self.x - i * 60, self.y - 60))
-                image_path = rf"C:\Users\Vedo\Desktop\Coinis kurs\Fillio\assets\icons\icon{
+                image_path = rf"Fillio\assets\icons\icon{
                     i}.png"
                 if i == 1:
                     self.img1 = tk.PhotoImage(file=image_path)
@@ -91,13 +91,13 @@ class FloatingButton:
                     new_button = tk.Button(
                         new_window, image=self.img4, command=self.reject)
                 if i == 5:
-                    settings_button_path = r"C:\Users\Vedo\Desktop\Coinis kurs\Fillio\assets\icons\settings.png"
+                    settings_button_path = r"Fillio\assets\icons\settings.png"
                     self.imgSettingsButton = tk.PhotoImage(
                         file=settings_button_path)
                     new_button = tk.Button(
                         new_window, image=self.imgSettingsButton, command=self.settings)
                 if i == 6:
-                    exit_button_path = r"C:\Users\Vedo\Desktop\Coinis kurs\Fillio\assets\icons\exit.png"
+                    exit_button_path = r"Fillio\assets\icons\exit.png"
                     self.imgExitbutton = tk.PhotoImage(file=exit_button_path)
                     new_button = tk.Button(
                         new_window, image=self.imgExitbutton, command=root.destroy)
