@@ -7,23 +7,23 @@ Welcome to the Personal Assistant Bot, your intelligent companion designed to st
 
 ### Key Features:
 
-**AI-Powered Response Generation:** Leverage the power of artificial intelligence to create tailored responses for your incoming messages, freeing you from repetitive manual typing.\
-**Enhanced Productivity:** Save valuable time by automating responses, allowing you to focus on more critical tasks.\
-**Message Summarization:** Quickly grasp the essence of lengthy messages with automatically generated summaries, ensuring you stay on top of your communication flow.\
-**Customization Options:** Choose from a range of response styles, including acceptances, rejections, excuses, or concise summaries, to perfectly suit your communication needs.\
+**AI-Powered Response Generation:** Leverage the power of artificial intelligence to create tailored responses for your incoming messages, freeing you from repetitive manual typing. <br>
+**Enhanced Productivity:** Save valuable time by automating responses, allowing you to focus on more critical tasks.<br>
+**Message Summarization:** Quickly grasp the essence of lengthy messages with automatically generated summaries, ensuring you stay on top of your communication flow.<br>
+**Customization Options:** Choose from a range of response styles, including acceptances, rejections, excuses, or concise summaries, to perfectly suit your communication needs.<br>
 **Platform Agnostic:** Enjoy the flexibility of using the bot across a wide array of communication platforms, maximizing its utility in your daily interactions.
 
 ### Technical Specifications
 
-**Programming Language:** Python 3\
-**Development Tools:**\
+**Programming Language:** Python 3<br>
+**Development Tools:** <br>
 Visual Studio Code\
 Git
-**Libraries:**
-**OpenAI:** Facilitates interaction with the OpenAI API for AI-powered response generation.\
-**PyAutoGUI:** Automates computer activities, including mouse and keyboard control, for seamless interaction with communication platforms.\
-**Pyperclip:** Provides functionalities for manipulating elements within the clipboard (temporary memory), enabling efficient text transfer.\
-**Tkinter (Optional):** Offers the ability to create a user-friendly graphical user interface (GUI) for user interaction (alternative interfaces may be considered).\
+**Libraries:** <br>
+**OpenAI:** Facilitates interaction with the OpenAI API for AI-powered response generation.<br>
+**PyAutoGUI:** Automates computer activities, including mouse and keyboard control, for seamless interaction with communication platforms.<br>
+**Pyperclip:** Provides functionalities for manipulating elements within the clipboard (temporary memory), enabling efficient text transfer.<br>
+**Tkinter (Optional):** Offers the ability to create a user-friendly graphical user interface (GUI) for user interaction (alternative interfaces may be considered).<br>
 **Image Processing Libraries (Optional):** Depending on platform integration, libraries like PIL (Python Imaging Library) or OpenCV might be used for image manipulation and potential OCR (Optical Character Recognition) tasks.
 
 
