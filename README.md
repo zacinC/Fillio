@@ -23,7 +23,7 @@ Welcome to the Personal Assistant Bot, your intelligent companion designed to st
 - **OpenAI:** Facilitates interaction with the OpenAI API for AI-powered response generation.<br>
 - **PyAutoGUI:** Automates computer activities, including mouse and keyboard control, for seamless interaction with communication platforms.<br>
 - **Pyperclip:** Provides functionalities for manipulating elements within the clipboard (temporary memory), enabling efficient text transfer.<br>
-- **Tkinter (Optional):** Offers the ability to create a user-friendly graphical user interface (GUI) for user interaction (alternative interfaces may be considered).<br>
+- **Tkinter:** Offers the ability to create a user-friendly graphical user interface (GUI) for user interaction (alternative interfaces may be considered).<br>
 - **PIL (Python Imaging Library):** Offers image manipulation capabilities, encompassing image loading and format adjustments.<br>
 - **PyTesseract:** Leverages Optical Character Recognition (OCR) to extract text from images.<br>
 - **Keyboard:** Simulates keyboard actions.
