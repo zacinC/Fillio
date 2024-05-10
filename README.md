@@ -18,7 +18,7 @@ Welcome to the Personal Assistant Bot, your intelligent companion designed to st
 **Programming Language:** Python 3<br>
 **Development Tools:** <br>
 Visual Studio Code\
-Git
+Git <br>
 **Libraries:** <br>
 **OpenAI:** Facilitates interaction with the OpenAI API for AI-powered response generation.<br>
 **PyAutoGUI:** Automates computer activities, including mouse and keyboard control, for seamless interaction with communication platforms.<br>
