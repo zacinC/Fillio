@@ -3,7 +3,7 @@ import pyautogui as pg
 import pyperclip
 
 options = {"excuse": "Write me an excuse for this message", "acception": "Write me an acception", "rejection": "Write me a rejection",
-           "shortly summarized": "Don't respond to this, Summarize it in 3 words"}
+           "shortly summarized": "Don't respond to this, Summarize it in 3 words", 'explain': "Explain this in detail and easy to understand"}
 
 
 def message_validation(message):

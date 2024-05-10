@@ -1,8 +1,7 @@
 import tkinter as tk
-import tkinter.messagebox
 import pyperclip
-from aiResponse import message_validation
-from image_text_detect import screenshot_to_text
+from assets.aiResponse import message_validation
+from assets.image_text_detect import screenshot_to_text
 import pyautogui as pg
 
 
@@ -60,7 +59,7 @@ class FloatingButton:
         self.prev_y = None
 
     def onButtonClick(self):
-        print("Button clicked!")
+        # print("Button clicked!")
         if self.floating_buttons:
             # If floating buttons exist, destroy them and clear the list
             for floating_button in self.floating_buttons:
@@ -171,15 +170,18 @@ class FloatingButton:
         try:
             message = screenshot_to_text()
         except Exception as e:
-            self.text_output.insert(tk.END,
-                                    f"\nScreenshot failed by exception: {e}\n ")
+            if self.spawn_forms.get() == "1":
+                self.text_output.insert(tk.END,
+                                        f"\nScreenshot failed by exception: {e}\n ")
 
         if self.prompt_advisory.get() == "1":
             try:
-                self.text_input.insert(tk.END, message + ' --excuse--')
+                if self.spawn_forms.get() == "1":
+                    self.text_input.insert(tk.END, message + ' --excuse--')
             except:
-                self.text_output.insert(
-                    tk.END, "\nScreenshot failed or canceled or blank\n")
+                if self.spawn_forms.get() == "1":
+                    self.text_output.insert(
+                        tk.END, "\nScreenshot failed or canceled or blank\n")
         else:
             self.submitToAi(message, ' --excuse--')
         deiconify_app(self)
@@ -189,15 +191,18 @@ class FloatingButton:
         try:
             message = screenshot_to_text()
         except Exception as e:
-            self.text_output.insert(tk.END,
-                                    f"\nScreenshot failed by exception: {e}\n ")
+            if self.spawn_forms.get() == "1":
+                self.text_output.insert(tk.END,
+                                        f"\nScreenshot failed by exception: {e}\n ")
 
         if self.prompt_advisory.get() == "1":
             try:
-                self.text_input.insert(tk.END, message + ' --acception--')
+                if self.spawn_forms.get() == "1":
+                    self.text_input.insert(tk.END, message + ' --acception--')
             except:
-                self.text_output.insert(
-                    tk.END, "\nScreenshot failed or canceled or blank\n")
+                if self.spawn_forms.get() == "1":
+                    self.text_output.insert(
+                        tk.END, "\nScreenshot failed or canceled or blank\n")
         else:
             self.submitToAi(message, ' --acception--')
         deiconify_app(self)
@@ -226,10 +231,11 @@ class FloatingButton:
         try:
             message = screenshot_to_text()
         except Exception as e:
-            self.text_output.insert(tk.END,
-                                    f"\nScreenshot failed by exception: {e}\n ")
+            if self.spawn_forms.get() == "1":
+                self.text_output.insert(tk.END,
+                                        f"\nScreenshot failed by exception: {e}\n ")
 
-        if self.prompt_advisory.get() == "1":
+        if self.spawn_forms.get() == "1" and self.prompt_advisory.get() == "1":
             try:
                 self.text_input.insert(tk.END, message + ' --rejection--')
             except:
@@ -292,14 +298,15 @@ class FloatingButton:
 
     def submitToAi(self, prompt, option=''):
         if prompt == -1 or prompt == '':
-            self.text_output.insert(
-                tk.END, "\nScreenshot failed or canceled or blank\n")
+            if self.spawn_forms.get() == "1":
+                self.text_output.insert(
+                    tk.END, "\nScreenshot failed or canceled or blank\n")
             return
 
         response = message_validation(prompt + option)
-
-        self.text_output.insert(
-            tk.END, f"\n{response}\n")
+        if self.spawn_forms.get() == "1":
+            self.text_output.insert(
+                tk.END, f"\n{response}\n")
         pyperclip.copy(response)
         pg.hotkey('ctrl', 'v')
         pg.hotkey('ctrl', 'a')
@@ -330,7 +337,5 @@ class FloatingButton:
             self.prev_y = event.y_root
 
 
-if __name__ == "__main__":
-    root = tk.Tk()
-    app = FloatingButton(root)
-    root.mainloop()
+root = tk.Tk()
+app = FloatingButton(root)

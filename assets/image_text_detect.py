@@ -5,7 +5,6 @@ import PIL
 import keyboard
 import time
 import os
-import pyautogui
 
 
 def screenshot_to_text():
